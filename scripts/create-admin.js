@@ -1,5 +1,5 @@
 /**
- * Create (or promote) a superadmin account.
+ * Create (or promote) an admin account.
  *
  * A fresh database has no admin at all, so nothing in the dashboard can be
  * reached and no partner application can ever be approved. This bootstraps the
@@ -7,7 +7,7 @@
  *
  *   node scripts/create-admin.js <email> <password> [First] [Last]
  *
- * If the email already exists the account is promoted to superadmin and its
+ * If the email already exists the account is promoted to 'admin' and its
  * password is left alone — pass a password only when creating.
  *
  * Run from the server folder (it reads server/.env for DATABASE_URL).
@@ -32,9 +32,9 @@ if (!email) {
     if (existing) {
         await users.updateOne(
             { _id: existing._id },
-            { $set: { role: 'superadmin', status: 'active', isEmailVerified: true, isDeleted: false } }
+            { $set: { role: 'admin', status: 'active', isEmailVerified: true, isDeleted: false } }
         );
-        console.log(`Promoted existing account ${email} to superadmin.`);
+        console.log(`Promoted existing account ${email} to admin.`);
     } else {
         if (!password) {
             console.error('This email does not exist yet — pass a password to create the account.');
@@ -48,7 +48,7 @@ if (!email) {
             lastName,
             phone: '',
             avatar: '',
-            role: 'superadmin',
+            role: 'admin',
             permissions: [],
             status: 'active',
             isEmailVerified: true,
@@ -60,7 +60,7 @@ if (!email) {
             createdAt: new Date(),
             updatedAt: new Date(),
         });
-        console.log(`Created superadmin ${email}.`);
+        console.log(`Created admin ${email}.`);
     }
 
     await mongoose.disconnect();
