@@ -18,16 +18,16 @@ const DEFAULT_HOME_SECTIONS = {
     },
     aboutSection: {
         enabled: true,
-        title: 'আমাদের সম্পর্কে',
-        description: 'মাওয়া হোমবাজার বিডি বাংলাদেশের একটি বিশ্বস্ত অনলাইন মার্কেটপ্লেস। কোন প্রকার পুঁজি বা ইনভেস্টমেন্ট ছাড়াই ঘরে বসে অসংখ্য ক্যাটেগরির প্রায় দশ হাজারেরও বেশি প্রোডাক্ট নিয়ে বিজনেস করতে পারবেন অনলাইনে আমাদের মাধ্যমে। ইনস্ট্যান্ট পেমেন্ট, ভেরিফাইড প্রোডাক্ট, ছবি দিয়ে সার্চ, ক্যাশ অন ডেলিভারি এবং কল সেন্টার সাপোর্ট সহ অত্যাধুনিক সকল সুবিধা রয়েছে এখানে।',
+        title: { en: 'About Us', bn: 'আমাদের সম্পর্কে' },
+        description: { en: 'Mawa Homebazar BD is a trusted online marketplace in Bangladesh. With no capital or investment, you can run an online business from home with more than ten thousand products across many categories. Instant payment, verified products, image search, cash on delivery and call-centre support are all included.', bn: 'মাওয়া হোমবাজার বিডি বাংলাদেশের একটি বিশ্বস্ত অনলাইন মার্কেটপ্লেস। কোন প্রকার পুঁজি বা ইনভেস্টমেন্ট ছাড়াই ঘরে বসে অসংখ্য ক্যাটেগরির প্রায় দশ হাজারেরও বেশি প্রোডাক্ট নিয়ে বিজনেস করতে পারবেন অনলাইনে আমাদের মাধ্যমে। ইনস্ট্যান্ট পেমেন্ট, ভেরিফাইড প্রোডাক্ট, ছবি দিয়ে সার্চ, ক্যাশ অন ডেলিভারি এবং কল সেন্টার সাপোর্ট সহ অত্যাধুনিক সকল সুবিধা রয়েছে এখানে।' },
         imageUrl: '',
-        ctaLabel: 'বিস্তারিত জানুন',
+        ctaLabel: { en: 'Learn more', bn: 'বিস্তারিত জানুন' },
         ctaHref: '/about',
     },
     servicesSection: {
         enabled: true,
-        title: 'ঘরেবসে পন্যসামগ্রিই ও সর্ভিস সমূহ অর্ডার করুন দ্রুত পৌচে দিবো আপনার হতে।',
-        subtitle: 'আমাদের এই প্লাটফর্মের মাধ্যমে আপনি পাচ্ছেন অসংখ্য বিজনেস এবং ইনকাম করার সুযোগ।',
+        title: { en: 'Order products and services from home — we deliver them to your hands, fast.', bn: 'ঘরেবসে পন্যসামগ্রিই ও সর্ভিস সমূহ অর্ডার করুন দ্রুত পৌচে দিবো আপনার হতে।' },
+        subtitle: { en: 'Our platform gives you countless ways to build a business and earn.', bn: 'আমাদের এই প্লাটফর্মের মাধ্যমে আপনি পাচ্ছেন অসংখ্য বিজনেস এবং ইনকাম করার সুযোগ।' },
         items: [
             { icon: '🛍️', title: 'রিসেলিং / ড্রপশিপিং',   description: '', link: '', active: true, order: 0 },
             { icon: '📦', title: 'হোলসেল প্রোডাক্ট',       description: '', link: '', active: true, order: 1 },
@@ -65,8 +65,8 @@ const DEFAULT_HOME_SECTIONS = {
     },
     featuresSection: {
         enabled: true,
-        title: 'আমাদের স্পেশিয়াল ফিচারস',
-        subtitle: 'ড্রপশিপিং এবং রিসেলিং এর জগতে আমরাই দিচ্ছি সবচেয়ে বেশি এবং আকর্ষণীয় সুবিধা।',
+        title: { en: 'Our Special Features', bn: 'আমাদের স্পেশিয়াল ফিচারস' },
+        subtitle: { en: 'We offer the most — and the most attractive — benefits in dropshipping and reselling.', bn: 'ড্রপশিপিং এবং রিসেলিং এর জগতে আমরাই দিচ্ছি সবচেয়ে বেশি এবং আকর্ষণীয় সুবিধা।' },
         items: [
             { icon: '💰', title: 'জিরো ইনভেস্টমেন্ট', description: 'কোন রকম পুঁজি বা ইনভেস্টমেন্ট ছাড়াই সম্পূর্ণ ফ্রি\'তে রেজিস্ট্রেশন করে ফুল ক্যাশ অন ডেলিভারিতে বিজনেস করতে পারবেন আমাদের মাধ্যমে।', active: true, order: 0 },
             { icon: '⚡', title: 'ইন্সট্যান্ট পেমেন্ট', description: 'আপনার অর্ডার ডেলিভারি হওয়ার পর প্রফিটের টাকা উইথড্র দেওয়ার সাথে সাথেই অটোমেটিক ভাবে সেকেন্ডেই চলে যাবে আপনার একাউন্টে।', active: true, order: 1 },
@@ -80,15 +80,15 @@ const DEFAULT_HOME_SECTIONS = {
     },
     categoryShowcaseSection: {
         enabled: true,
-        title: 'আমাদের প্রোডাক্ট সমূহ',
-        subtitle: 'আমাদের রয়েছে বিভিন্ন ক্যাটেগরির অসংখ্য প্রোডাক্ট, যেগুলো আপনি সহজেই সেল করতে পারবেন অনলাইনে।',
+        title: { en: 'Our Products', bn: 'আমাদের প্রোডাক্ট সমূহ' },
+        subtitle: { en: 'We carry a huge range of products across categories that you can easily sell online.', bn: 'আমাদের রয়েছে বিভিন্ন ক্যাটেগরির অসংখ্য প্রোডাক্ট, যেগুলো আপনি সহজেই সেল করতে পারবেন অনলাইনে।' },
         showCount: 60,
         onlyHome: false,
     },
     howItWorksSection: {
         enabled: true,
-        title: 'কিভাবে আমাদের মাধ্যমে বিজনেস করবেন',
-        subtitle: 'কোনরকম ঝুঁকি বা ঝামেলা ছাড়া সহজে অনলাইনে বিজনেস করুন ড্রপ শিপিং মডেলে।',
+        title: { en: 'How to Run a Business With Us', bn: 'কিভাবে আমাদের মাধ্যমে বিজনেস করবেন' },
+        subtitle: { en: 'Sell online through the dropshipping model — no risk, no hassle.', bn: 'কোনরকম ঝুঁকি বা ঝামেলা ছাড়া সহজে অনলাইনে বিজনেস করুন ড্রপ শিপিং মডেলে।' },
         steps: [
             { step: '১', title: '', description: 'সম্পূর্ণ ফ্রি তে রেজিস্ট্রেশন করুন আমাদের প্ল্যাটফর্মে আপনার পেজ অথবা শপ নাম দিয়ে।', active: true, order: 0 },
             { step: '২', title: '', description: 'প্রোডাক্টের ছবি এবং ডেসক্রিপশন ডাউনলোড করে আপলোড করুন আপনার নিজস্ব পেজ অথবা ওয়েবসাইটে।', active: true, order: 1 },
@@ -100,8 +100,8 @@ const DEFAULT_HOME_SECTIONS = {
     },
     experienceSection: {
         enabled: true,
-        title: 'আমাদের এক্সপেরিয়েন্স',
-        subtitle: 'আমরা আমাদের অভিজ্ঞ টিমের মাধ্যমে অত্যন্ত সুনামের সাথে আমাদের সন্মানিত সেলারদের অর্ডার প্রসেস করে আসছি এছাড়াও আমাদের আরও রয়েছে…',
+        title: { en: 'Our Experience', bn: 'আমাদের এক্সপেরিয়েন্স' },
+        subtitle: { en: 'Our experienced team has processed our valued sellers’ orders with a strong reputation, and there is more besides…', bn: 'আমরা আমাদের অভিজ্ঞ টিমের মাধ্যমে অত্যন্ত সুনামের সাথে আমাদের সন্মানিত সেলারদের অর্ডার প্রসেস করে আসছি এছাড়াও আমাদের আরও রয়েছে…' },
         items: [
             { icon: '📦', text: 'এক দিনে সর্বোচ্চ ৫০০০+ অর্ডার সহ মাসে ৭০,০০০ অর্ডার হ্যান্ডল করার অভিজ্ঞতা।', active: true, order: 0 },
             { icon: '💰', text: 'আমাদের রয়েছে এক মাসে সর্বোচ্চ ৬০ লক্ষ+ টাকা রিসেলারদের প্রফিট দেওয়ার অভিজ্ঞতা।', active: true, order: 1 },
@@ -110,8 +110,8 @@ const DEFAULT_HOME_SECTIONS = {
     },
     reviewsSection: {
         enabled: true,
-        title: 'ড্রপশিপার রিভিউস',
-        subtitle: 'অসংখ্য সেলার ও ড্রপশিপার অত্যন্ত সন্তুষ্টির সাথে প্রায় তিন বছর যাবত আমাদের সাথে বিজনেস করে আসছেন। আপনাদের আস্থা ও সন্তুষ্টির কারণেই মাওয়া হোমবাজার বিডি আজ বাংলাদেশের অন্যতম সেরা ড্রপশিপিং প্ল্যাটফর্ম।',
+        title: { en: 'Dropshipper Reviews', bn: 'ড্রপশিপার রিভিউস' },
+        subtitle: { en: 'Thousands of sellers and dropshippers have done business with us for nearly three years with great satisfaction. Your trust and satisfaction are why Mawa Homebazar BD is one of the best dropshipping platforms in Bangladesh today.', bn: 'অসংখ্য সেলার ও ড্রপশিপার অত্যন্ত সন্তুষ্টির সাথে প্রায় তিন বছর যাবত আমাদের সাথে বিজনেস করে আসছেন। আপনাদের আস্থা ও সন্তুষ্টির কারণেই মাওয়া হোমবাজার বিডি আজ বাংলাদেশের অন্যতম সেরা ড্রপশিপিং প্ল্যাটফর্ম।' },
         items: [
             { name: 'Sobuj Akon', designation: 'রিসেলার', avatar: '', rating: 5, text: 'এই প্ল্যাটফর্মে আমি বিগত ২ বছর ধরে কাজ করছি। পেমেন্ট সিস্টেম, স্টক সাপোর্ট, প্রোডাক্ট কোয়ালিটি এবং দ্রুত বুকিং সিস্টেম আমাকে ব্যবসায় প্রচুর সাফল্য অর্জনে সাহায্য করেছে। মাওয়া হোমবাজার বিডি আমার ব্যবসার জন্য একটি অমূল্য সম্পদ।', active: true, order: 0 },
             { name: 'হৃদয়ে বাংলাদেশ', designation: 'ড্রপশিপার', avatar: '', rating: 5, text: 'আমি প্রায় তিন বছর ধরে মাওয়া হোমবাজার বিডিতে কাজ করছি। কোনো রকম পুঁজি বা ইনভেস্ট ছাড়াই একটা সেলস টিম তৈরি করে মাসে ৩০-৩৫ হাজার টাকা ইনকাম করছি। আপনাদের সার্ভিস ও সাপোর্ট সত্যিই অসাধারণ — একটা আস্থার প্ল্যাটফর্ম।', active: true, order: 1 },
