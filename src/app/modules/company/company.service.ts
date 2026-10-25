@@ -54,7 +54,14 @@ const CompanyService = {
         }
 
         const company = await Company.create({ ...pick(payload, OWNER_EDITABLE), user: userId });
-        await User.findByIdAndUpdate(userId, { role: 'company' });
+        // Grant the company role so the panel is reachable — but NEVER demote an
+        // admin. If an admin applies with their own account, keeping `admin`
+        // stops them from being locked out of the admin panel (an admin can
+        // reach everything anyway). Only a plain user is promoted to `company`.
+        const applicant = await User.findById(userId).select('role');
+        if (applicant && applicant.role !== 'admin') {
+            await User.findByIdAndUpdate(userId, { role: 'company' });
+        }
 
         return company;
     },
@@ -183,8 +190,12 @@ const CompanyService = {
 
         // Re-grant the role: an admin may have changed it while the application
         // sat in the queue, and an approved company with the wrong role is locked
-        // out of its own panel.
-        await User.findByIdAndUpdate(company.user, { role: 'company' });
+        // out of its own panel. Never demote an actual admin, though — approving
+        // a company owned by an admin account must not strip admin access.
+        const owner = await User.findById(company.user).select('role');
+        if (owner && owner.role !== 'admin') {
+            await User.findByIdAndUpdate(company.user, { role: 'company' });
+        }
 
         // Nothing to refresh in geo coverage here — `hasDealer` /
         // `homeDeliveryAvailable` are computed from dealers only, and a company
