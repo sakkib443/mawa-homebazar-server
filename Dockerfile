@@ -7,13 +7,18 @@
 FROM node:20-alpine AS builder
 WORKDIR /app
 
-# Install ALL deps (tsc lives in dependencies) using the lockfile.
+# Install ALL deps (including devDependencies) using the lockfile.
+# --include=dev forces dev deps even when Coolify injects NODE_ENV=production
+# at build time (otherwise build tools would be skipped and the build fails).
 COPY package.json package-lock.json ./
-RUN npm ci
+RUN npm ci --include=dev
 
 COPY tsconfig.json ./
 COPY src ./src
-RUN npm run build
+# Compile straight with tsc instead of `npm run build`, so the build never
+# depends on the package.json build script (which may be prefixed with other
+# commands). This produces the same dist/ output.
+RUN npx tsc
 
 
 # ---- Stage 2: runtime --------------------------------------------
